@@ -21,15 +21,15 @@ install necessary packages:
 
 * create the virtual environment: `python -m venv ll_env`
 
-*Activate the environment
+* Activate the environment
 
-  for macOS: `source ll_env/bin/activate`
+      for macOS: `source ll_env/bin/activate`
+    
+      for Win: `cd` into `ll_env` and run the command `.\Scripts\activate`
+    
+      your terminal should show: `((ll_env)) C:\...`
 
-  for Win: `cd` into `ll_env` and run `the command .\Scripts\activate
-
-  your terminal should show: `((ll_env)) C:\...`
-
-* run `pip install django' (since we're in a virtual env no need for the --user flag, but django will only be active when this env is)
+* run `pip install django` (since we're in a virtual env no need for the --user flag, but django will only be active when this env is)
 
 * run `python manage.py migrate` to apply migrations
 
@@ -37,7 +37,7 @@ install necessary packages:
 
 * run `python manage.py createsuperuser`(note that email is stored as hash) to create an admin account. Obey the wizard.
 
-* open to localhost:8000/admin for admin-level access (creating topics & entries)
+* open to `localhost:8000/admin` for admin-level access (creating topics & entries)
 
 ## Known Bugs
 * it's not very pretty

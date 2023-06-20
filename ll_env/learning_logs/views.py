@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .models import Topic
+from .forms import TopicForm
 
 # the various routes and how to process & render the right data
 def index(request):
@@ -22,3 +23,19 @@ def topic(request, topic_id):
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
+
+def new_topic(request):
+    """add a new topic"""
+    if request.method != 'POST':
+        # No data submitted; create a blank form
+        form = TopicForm()
+    else:
+        # POST submitted; process
+        form = TopicForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('learning_logs:topics')
+        
+    # display blank/invalid
+    context = {'form': form}
+    return render(request, 'learning_logs/new_topic.html', context)

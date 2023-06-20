@@ -8,5 +8,7 @@ from . import views
 app_name = 'learning_logs'
 urlpatterns = [
     # Home. 3args: route, which func to call in views.py, name for url pattern
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    # page to show all topics
+    path('topics/', views.topics, name='topics')
 ]

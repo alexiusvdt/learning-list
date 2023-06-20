@@ -1,0 +1,17 @@
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+
+<p>Topics:</p>
+
+<ul>
+  {% for topic in topics %}
+    <li>{{ topic }}</li>
+  <!-- if nothing found -->
+    {% empty %}
+    <li>No topics have been added yet!</li>
+  <!-- need to explicitly end the for loop sort of like jsx -->
+  {% endfor %}
+</ul>
+
+{% endblock content %}

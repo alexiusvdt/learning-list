@@ -15,4 +15,6 @@ urlpatterns = [
     path('topics/<int:topic_id>/', views.topic, name='topic'),
     # page for adding a new topic
     path('new_topic/', views.new_topic, name='new_topic'),
+        # new entries must associate with a topic so we need the topic_id arg in the url
+    path('new_entry/<int:topic_id>/', views.new_entry, name='new_entry'),
 ]

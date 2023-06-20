@@ -76,3 +76,8 @@ Even grab all associated entries! (this will return the truncated version)
 t.entry_set.all()
 ```
 
+======
+general step: registering views/templates
+-create the url in the learning_log/urls.py folder (this is for setting up superpatterns like  /admin, '', etc i think)
+-create the urlpattern in the learning_logs/urls.py folder (specific /topic /details, etc)
+-create the view

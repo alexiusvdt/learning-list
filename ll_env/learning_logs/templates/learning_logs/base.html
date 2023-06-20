@@ -1,11 +1,15 @@
 <p>
   <!-- generates a URL matching the pattern(index) specified to the namespace(learning_logs)  -->
   <a href="{% url 'learning_logs:index' %}">Learning Log</a> - 
-  <a href="{% url 'learning_logs:topics' %}">Topics</a>
+  <a href="{% url 'learning_logs:topics' %}">Topics</a> --
+  {% if user.is_authenticated %}
+    Hello, {{ user.username }}
+  {% else %}
+    <a href="{% url 'users:login' %}">Log in</a>
+  {% endif %}
 </p>
 
-
-<!-- template tags -->
+<!-- template tags, we're calling each sub template content but we could specify block header, block footer, etc... -->
 {% block content %}{% endblock content %}
 
 <!-- in larger projects its common to have 1 parent template called base for an entire site and parent templates for each major section -->

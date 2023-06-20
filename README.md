@@ -103,6 +103,7 @@ When modifying the data the project manages, take these 3 steps:
 ======================
 creating users
 `python manage.py createsuperuser`(note that email is stored as hash)
+`pythong manage.py startapp users` (create users template files)
 
 obey the wizard
 
@@ -139,3 +140,5 @@ general step: registering views/templates
 -create the url in the learning_log/urls.py folder (this is for setting up superpatterns like  /admin, '', etc i think)
 -create the urlpattern in the learning_logs/urls.py folder (specific /topic /details, etc)
 -create the view
+
+++++

@@ -1,4 +1,4 @@
-"""Defintes URL patterns for learning_logs"""
+"""Defines URL patterns for learning_logs"""
 
 # needed to map urls to views
 from django.urls import path

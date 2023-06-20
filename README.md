@@ -1,3 +1,7 @@
+*before hosting:
+remove debug mode
+change secret key (both in learning_log/settings.py)
+
 
 User Stories/Spec
 - Learning Log will allow users to log the topics they're interested in and make journal entries as they learn about each topic.
@@ -30,4 +34,15 @@ verify project has been set up correctly by running `python manage.py runserver`
 
 `python manage.py startapp learning_logs` tells Django to create infrastructure to build an app (a project is built of many apps)
 
+When modifying the data the project manages, take these 3 steps:
+
+- modify models.py 
+
+- call `python manage.py makemigrations learning_log`: makemigrations tells Django to ffigure out how to modify the db so it can store the associated data with any new models.
+
+- call `python manage.py migrate` to actually apply it
+
+======================
+creating users
+`python manage.py createsuperuser`(note that email is stored as hash)
 

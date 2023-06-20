@@ -1,2 +1,3 @@
 ll_env/Lib/
-/__pycache__
+__pycache__/
+/learning_log/__pycache__/

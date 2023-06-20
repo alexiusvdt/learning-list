@@ -8,3 +8,18 @@ class Topic(models.Model):
     def __str__(self):
         """return a string representation of the model"""
         return self.text
+
+class Entry(models.Model):
+    """"Something specific about the topic"""
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    text = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        # just to prevent 'entrys'
+        verbose_name_plural = 'entries'
+
+    # info shown when refers to individual entries, clipped to 50 char
+    def __str__(self):
+        """return a string representation of the model"""
+        return f"{self.text[:50]}..."

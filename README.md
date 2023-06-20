@@ -46,3 +46,33 @@ When modifying the data the project manages, take these 3 steps:
 creating users
 `python manage.py createsuperuser`(note that email is stored as hash)
 
+obey the wizard
+
+=======================
+in the (ll_env) run `python manage.py shell` to launch the Django shell
+
+`from learning_logs.models import Topic`
+
+`Topic.objects.all()` will return a `<QuerySet [<Topic: topic1>, etc]>
+
+this can be looped like a list:
+
+```
+topics = Topic.objects.all()
+for topic in topics:
+  print(topic.id, topic)
+```
+
+we can look at associated attributes:
+
+```
+t = Topic.objects.get(id=1)
+t.text
+t.date_added
+```
+
+Even grab all associated entries! (this will return the truncated version)
+```
+t.entry_set.all()
+```
+

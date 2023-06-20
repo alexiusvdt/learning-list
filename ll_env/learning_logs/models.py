@@ -22,4 +22,7 @@ class Entry(models.Model):
     # info shown when refers to individual entries, clipped to 50 char
     def __str__(self):
         """return a string representation of the model"""
-        return f"{self.text[:50]}..."
+        if len(self.text) < 50:
+          return f"{self.text}"
+        else:
+          return f"{self.text[:50]}..."

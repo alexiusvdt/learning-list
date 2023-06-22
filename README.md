@@ -144,4 +144,21 @@ general step: registering views/templates
 -create the urlpattern in the learning_logs/urls.py folder (specific /topic /details, etc)
 -create the view
 
-++++
+===========
+heroku deployment
+
+*install the following packages into your environment:
+  ```
+  pip install psycopg2==2.7
+  pip install django-heroku
+  pip install gunicorn
+  ```
+  (psycopg2 > managing the db that heroku uses, django-heroku > manages the config file, gunicorn > provices serving apps in live environment)    
+
+* create a `requirements.txt` file (freeze tells pip to write all pkgs currently installed into the named file):
+  `pip freeze > requirements.txt`
+
+* run `python --version` to check your installed version. Make a new file called `runtime.txt` in the same dir as `manage.py` and enter the version as follows `python-x.x.x`
+
+* make a procfile:
+  make `Procfile` (with NO extension) in the same dir as requirements.txt and enter the following text & save: `web: gunicorn learning_log.wsgi --log-file`

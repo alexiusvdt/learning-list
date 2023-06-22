@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +36,9 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'bootstrap4',
+    'django_heroku',
+    'gunicorn',
+    
 
     # default django apps
     'django.contrib.admin',
@@ -132,3 +134,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # my settings
 LOGIN_URL = 'users:login'
+
+# Heroku settings
+import django_heroku
+django_heroku.settings(locals())

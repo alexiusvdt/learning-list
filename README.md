@@ -9,6 +9,7 @@
 
 * python
 * Django
+* Bootstrap
 
 ## Description/user stories
 - Learning Log will allow users to log the topics they're interested in and make journal entries as they learn about each topic.
@@ -30,6 +31,8 @@ install necessary packages:
       * your terminal should show: `((ll_env)) C:\...`
 
 * run `pip install django` (since we're in a virtual env no need for the --user flag, but django will only be active when this env is)
+
+* run `pip install django-bootstrap4`
 
 * run `python manage.py migrate` to apply migrations
 

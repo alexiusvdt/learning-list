@@ -26,6 +26,7 @@ def topic(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
     if topic.owner != request.user:
         raise Http404
+    
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
@@ -40,6 +41,8 @@ def new_topic(request):
         # POST submitted; process
         form = TopicForm(data=request.POST)
         if form.is_valid():
+            new_topic = form.save(commit=False)
+            new_topic.owner = request.user
             form.save()
             return redirect('learning_logs:topics')
         

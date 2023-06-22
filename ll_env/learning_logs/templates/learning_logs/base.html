@@ -6,12 +6,9 @@
     Hello, {{ user.username }}
     <a href="{% url 'users:logout' %}">Log out</a>
   {% else %}
+    <a href="{% url 'users:register' %}">Register</a>
     <a href="{% url 'users:login' %}">Log in</a>
   {% endif %}
 </p>
 
-<!-- template tags, we're calling each sub template content but we could specify block header, block footer, etc... -->
 {% block content %}{% endblock content %}
-
-<!-- in larger projects its common to have 1 parent template called base for an entire site and parent templates for each major section -->
-<!-- all the section templates inherit from base and each page in the site inherits from a section template -->

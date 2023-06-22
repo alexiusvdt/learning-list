@@ -1,7 +1,7 @@
 
 # Learning Log
 
-#### Storing topics & associated entries
+#### Storing topics & associated entries with Python and Django
 
 #### By Alex Johnson
 
@@ -21,13 +21,13 @@ install necessary packages:
 
 * create the virtual environment: `python -m venv ll_env`
 
-* Activate the environment
+* Activate the environment:
 
-      for macOS: `source ll_env/bin/activate`
+      * for macOS: `source ll_env/bin/activate`
     
-      for Win: `cd` into `ll_env` and run the command `.\Scripts\activate`
+      * for Win: `cd` into `ll_env` and run the command `.\Scripts\activate`
     
-      your terminal should show: `((ll_env)) C:\...`
+      * your terminal should show: `((ll_env)) C:\...`
 
 * run `pip install django` (since we're in a virtual env no need for the --user flag, but django will only be active when this env is)
 

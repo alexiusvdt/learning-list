@@ -10,7 +10,6 @@ def check_topic_owner(topic, request):
             raise Http404    
         
 
-
 def index(request):
     """the home page for learning log"""
     # take the request and render at this path

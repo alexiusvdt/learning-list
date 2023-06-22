@@ -18,6 +18,7 @@ def topics(request):
     # when building page that uses data(db query), pass context var to render() as well as the request obj itself
     return render(request, 'learning_logs/topics.html', context)
 
+@login_required
 def topic(request, topic_id):
     """show a single topic & its entries"""
     # queries the passed-in ID & returns the entry that matches, passes it to the correct route
@@ -26,6 +27,7 @@ def topic(request, topic_id):
     context = {'topic': topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
 
+@login_required
 def new_topic(request):
     """add a new topic"""
     if request.method != 'POST':
@@ -42,6 +44,7 @@ def new_topic(request):
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
 
+@login_required
 def new_entry(request, topic_id):
     """add a new entry for a given topic"""
     topic = Topic.objects.get(id=topic_id)
@@ -62,6 +65,7 @@ def new_entry(request, topic_id):
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_logs/new_entry.html', context)
 
+@login_required
 def edit_entry(request, entry_id):
     """edit an existing entry"""
     entry = Entry.objects.get(id=entry_id)

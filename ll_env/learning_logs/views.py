@@ -5,6 +5,11 @@ from django.http import Http404
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 
+def check_topic_owner(topic, request):
+    if topic.owner != request.user:
+            raise Http404    
+        
+
 
 def index(request):
     """the home page for learning log"""
@@ -24,8 +29,7 @@ def topic(request, topic_id):
     """show a single topic & its entries"""
     # queries the passed-in ID & returns the entry that matches, passes it to the correct route
     topic = Topic.objects.get(id=topic_id)
-    if topic.owner != request.user:
-        raise Http404
+    check_topic_owner(topic, request)
     
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
@@ -76,6 +80,7 @@ def edit_entry(request, entry_id):
     """edit an existing entry"""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
+    check_topic_owner(topic, request)
 
     if request.method != 'POST':
         # no data; blank form

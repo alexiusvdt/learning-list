@@ -43,6 +43,7 @@ install necessary packages:
 * open to `localhost:8000/admin` for admin-level access (creating topics & entries)
 
 ## secret mgmt with keyring
+
 ## Known Bugs
 * it's not very pretty
 

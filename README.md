@@ -42,6 +42,7 @@ install necessary packages:
 
 * open to `localhost:8000/admin` for admin-level access (creating topics & entries)
 
+## secret mgmt with keyring
 ## Known Bugs
 * it's not very pretty
 
@@ -162,3 +163,10 @@ heroku deployment
 
 * make a procfile:
   make `Procfile` (with NO extension) in the same dir as requirements.txt and enter the following text & save: `web: gunicorn learning_log.wsgi --log-file`
+
+* make your git commits & push
+
+* deploy to heroku:
+
+from the environment
+  * `heroku login`

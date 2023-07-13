@@ -46,6 +46,7 @@ install necessary packages:
 
 ## Known Bugs
 * it's not very pretty
+* some unnecessary files present in git repository
 
 ## Additional Thanks
 Eric Matthes for the helpful crash course & creative spark!
